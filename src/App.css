@@ -238,12 +238,13 @@ form button {
 }
 .changePage {
     position: fixed;
+    border: 2.5px solid white;
+    cursor: pointer;
     top: 50%;
     transform: translate(0%, -50%);
     margin: 0 2%;
     width: 40px;
     height: 80px;
-    border: none;
     background-color: #FF0000;
 }
 .caretbutton{
@@ -354,7 +355,7 @@ h3{
     background-color: #FF4422;
   }
   .fire h3 {
-    background-color: #8d564d;
+    background-color: #bb250e;
   }
   
   /* Water */
