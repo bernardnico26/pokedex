@@ -8,12 +8,12 @@ const NameCoach =()=>{
     const [value, setValue ]= useState("")
     const [buttonIcon, setButtonIcon] = useState(true)
     const dispacth = useDispatch("")
-    const navigete = useNavigate()
+    const navigate = useNavigate()
     const setName=(e)=>{
         e.preventDefault();
         dispacth( setShowHeader(true))
         dispacth( setEnterName(value))
-        navigete("/Pokedex")
+        navigate("/Pokedex")
     }
     const changeIcon=(e)=>{
         

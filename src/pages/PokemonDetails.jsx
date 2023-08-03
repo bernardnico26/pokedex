@@ -10,9 +10,12 @@ const PokemonDetails =()=>{
         axios
             .get(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then(resp => setPokemonDetails(resp.data))
-            .catch(error=>{if(error.response?.status>=400){navigate("/notFound")}})
-    },[])
-    console.log(pokemonDetails)
+            .catch(error=>{
+                navigate("/notFound"),
+                console.error(error)
+            })
+    },[id])
+
     return(
         <>
             <Outlet/>
@@ -22,7 +25,7 @@ const PokemonDetails =()=>{
                     <div className="principal-dates">
                         <div className="most-important-dates">
                             <h2>{pokemonDetails.name}</h2>
-                            <img src={pokemonDetails.sprites?.front_default} alt="" />
+                            <img src={pokemonDetails.sprites?.other.dream_world.front_default} alt="" />
                             <div className="phisicaldates">
                                 <p>Height: {pokemonDetails.height}</p>
                                 <p>Weight: {pokemonDetails.weight}</p>
@@ -34,57 +37,64 @@ const PokemonDetails =()=>{
                             <div className="statstitle">
                                 <h3>stats</h3>  
                             </div>
-                            
-                            <div>
-                                <p>HP: {pokemonDetails.stats?.[0].base_stat}</p>
-                                <div className="stats-bar">
-                                    <div
-                                    className="stats-fill"
-                                    style={{
-                                    width: `${(pokemonDetails.stats?.[0].base_stat / 150) * 100}%`,
-                                    backgroundColor: '#00FF00'
-                                    }}
-                                />
-                                </div>
-                            </div>
-                            <div>
-                                <p>Attack: {pokemonDetails.stats?.[1].base_stat}</p>
-                                <div className="stats-bar">
-                                    <div
-                                    className="stats-fill"
-                                    style={{
-                                    width: `${(pokemonDetails.stats?.[1].base_stat / 150) * 100}%`,
-                                    backgroundColor: '#921212'
-                                    }}
+                            <div className="stats-section">
+                                <div>
+                                    <p>HP: {pokemonDetails.stats?.[0].base_stat}</p>
+                                    <div className="stats-bar">
+                                        <div
+                                        className="stats-fill"
+                                        style={{
+                                        width: `${(pokemonDetails.stats?.[0].base_stat / 150) * 100}%`,
+                                        backgroundColor: '#00FF00'
+                                        }}
                                     />
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>Attack: {pokemonDetails.stats?.[1].base_stat}</p>
+                                    <div className="stats-bar">
+                                        <div
+                                        className="stats-fill"
+                                        style={{
+                                        width: `${(pokemonDetails.stats?.[1].base_stat / 150) * 100}%`,
+                                        backgroundColor: '#921212'
+                                        }}
+                                        />
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>Defense: {pokemonDetails.stats?.[2].base_stat}</p>
+                                    <div className="stats-bar">
+                                        <div
+                                        className="stats-fill"
+                                        style={{
+                                        width: `${(pokemonDetails.stats?.[2].base_stat / 150) * 100}%`,
+                                        backgroundColor: '#0000FF'
+                                        }}
+                                    />
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>Speed: {pokemonDetails.stats?.[5].base_stat}</p>
+                                    <div className="stats-bar">
+                                        <div
+                                        className="stats-fill"
+                                        style={{
+                                        width: `${(pokemonDetails.stats?.[5].base_stat / 150) * 100}%`,
+                                        backgroundColor: '#FFFF00'
+                                        }}
+                                    />
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <p>Defense: {pokemonDetails.stats?.[2].base_stat}</p>
-                                <div className="stats-bar">
-                                    <div
-                                    className="stats-fill"
-                                    style={{
-                                    width: `${(pokemonDetails.stats?.[2].base_stat / 150) * 100}%`,
-                                    backgroundColor: '#0000FF'
-                                    }}
-                                />
-                                </div>
-                            </div>
-                            <div>
-                                <p>Speed: {pokemonDetails.stats?.[5].base_stat}</p>
-                                <div className="stats-bar">
-                                    <div
-                                    className="stats-fill"
-                                    style={{
-                                    width: `${(pokemonDetails.stats?.[5].base_stat / 150) * 100}%`,
-                                    backgroundColor: '#FFFF00'
-                                    }}
-                                />
-                                </div>
-                            </div>
+                            
                         </div>
-                        <hr />
+                        
+                        
+                    </div>
+                    <hr />
+                    
+                    <div className="otherdates">
                         <div className="habilities">
                             <div className="habilitiestitle">
                                 <h3>Habilities</h3>
@@ -98,12 +108,7 @@ const PokemonDetails =()=>{
                                 }
                             </ul>
                         </div>
-                    </div>
-                    <hr />
-                    
-                    <div className="otherdates">
-                        
-                        
+                        <hr />
                         <div className="moves">
                             <h3>Moves</h3>
                             <ul className="container__move">

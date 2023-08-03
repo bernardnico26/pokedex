@@ -37,7 +37,7 @@ const Pokedex = ({changePage, dataPokemon, change, url})=>{
                 onClick={()=>changePage(dataPokemon?.next)} 
                 className={`changePage next ${dataPokemon?.next==null?"null":""}`}
             >
-                <i class='bx bx-caret-right caretbutton'></i>
+                <i className='bx bx-caret-right caretbutton'></i>
             </button>
         </main>
         

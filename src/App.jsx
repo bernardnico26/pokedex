@@ -37,7 +37,7 @@ function App() {
         <Route path='/' element={ <NameCoach/> }/>
         <Route element={<ProtectedRouter/>}>
           <Route path='/Pokedex' element={ <Pokedex changePage={changePage} dataPokemon={dataPokemon} change={change} url={url}/> }/>
-          <Route path='/Pokedex/:name/:id' element={ <PokemonDetails/>}/>
+          <Route path='/Pokedex/:id' element={ <PokemonDetails/>}/>
           <Route path='/notFound' element={ <NotFound /> }/>
         </Route>
         

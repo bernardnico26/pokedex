@@ -1,4 +1,13 @@
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { setShowHeader } from "../store/slice/printHeader"
+
 const NotFound =()=>{
+    const dispacth = useDispatch()
+    useEffect(()=>{
+        dispacth( setShowHeader(false))
+
+    },[])
     return(
         <section className="notFound-section">
             <div className="notFound">

@@ -19,8 +19,8 @@ const Pokemon = ({url})=>{
     if(pokemon?.types?.length>1){
         coma = ", "
     }
-    const details =(id, name)=>{
-        navigate(`/Pokedex/${name}/${id}`)
+    const details =(id)=>{
+        navigate(`/Pokedex/${id}`)
         dispacth( setShowHeader(false))
 
     }
@@ -28,10 +28,10 @@ const Pokemon = ({url})=>{
         return (
             <div 
                 className={`pokemon__card ${pokemon?.types?.[0]?.type.name}`}
-                onClick={()=>details(pokemon?.id, pokemon?.name)}>
+                onClick={()=>details(pokemon?.id)}>
                 <div className="img">
                     <h3>{pokemon?.name}</h3>
-                    <img src={pokemon?.sprites?.front_default} alt="img" width="200px" />
+                    <img src={pokemon?.sprites?.other.dream_world.front_default} alt="img" width="200px" />
                 </div>
                 <div className="stat__container">
                     <div>

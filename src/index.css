@@ -8,6 +8,10 @@
     src: url(/public/fuentes/Ketchum\ Italic.otf);
 }
 body{
+    background-image: url(/public/Pokeball-Desktop-Backgrounds.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
     font-family: pokefont;
     color:rgb(43, 41, 41);
 }
