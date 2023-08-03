@@ -3,15 +3,17 @@
     margin: 0;
     box-sizing: border-box;
 }
-@font-face {
-    font-family: pokefont;
-    src: url(/public/fuentes/Ketchum\ Italic.otf);
-}
 body{
     background-image: url(/public/Pokeball-Desktop-Backgrounds.png);
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
-    font-family: pokefont;
+    font-family:'Pokemon Solid',sans-serif;
+    font-size: 10px;
     color:rgb(43, 41, 41);
+}
+@media screen and (min-width: 556px) {
+    body{
+    font-size: 12px;
+    }
 }

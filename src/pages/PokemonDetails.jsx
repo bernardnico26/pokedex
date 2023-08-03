@@ -34,7 +34,7 @@ const PokemonDetails =()=>{
                         </div>
                         <hr />
                         <div className="stats">
-                            <div className="statstitle">
+                            <div className={`statstitle ${pokemonDetails?.types?.[0]?.type.name}`}>
                                 <h3>stats</h3>  
                             </div>
                             <div className="stats-section">
@@ -96,7 +96,7 @@ const PokemonDetails =()=>{
                     
                     <div className="otherdates">
                         <div className="habilities">
-                            <div className="habilitiestitle">
+                            <div className={`habilitiestitle ${pokemonDetails?.types?.[0]?.type.name}`}>
                                 <h3>Habilities</h3>
                             </div>
                             
@@ -110,7 +110,10 @@ const PokemonDetails =()=>{
                         </div>
                         <hr />
                         <div className="moves">
-                            <h3>Moves</h3>
+                            <div className={`movestitle ${pokemonDetails?.types?.[0]?.type.name}`}>
+                                <h3>Moves</h3>
+                            </div>
+                            
                             <ul className="container__move">
                                 {
                                     pokemonDetails.moves?.map(print=>(
