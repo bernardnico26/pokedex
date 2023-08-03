@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: pokefont;
+    src: url(/public/fuentes/Ketchum\ Italic.otf);
+}
+body{
+    font-family: pokefont;
+    color:rgb(43, 41, 41);
+}
