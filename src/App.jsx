@@ -10,7 +10,7 @@ import ProtectedRouter from './Components/ProtectorRouter'
 import { useEffect, useState } from 'react'
 import axios  from "axios"
 import { useSelector } from 'react-redux'
-import Head from './Components/head'
+import Head from './Components/Head'
 import PokemonDetails from './pages/PokemonDetails'
 import NotFound from './pages/NotFound'
 
