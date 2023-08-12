@@ -9,11 +9,5 @@ body{
     background-size:cover;
     background-attachment: fixed;
     font-family: 'Libre Franklin', sans-serif;
-    font-size: 10px;
     color:rgb(43, 41, 41);
-}
-@media screen and (min-width: 556px) {
-    body{
-    font-size: 12px;
-    }
 }

@@ -18,6 +18,17 @@ select {
 nav{
   width: 100%;
 }
+.otherdates::-webkit-scrollbar {
+  width: 12px;
+}
+.otherdates::-webkit-scrollbar-track {
+  background: #0a0a0a00;
+}
+.otherdates::-webkit-scrollbar-thumb {
+  background-color:#0000004d;
+  border-radius: 22px;
+  border: 2px solid #292b29;
+}
 .notFound-section{
   display: flex;
   align-items: center;
@@ -113,6 +124,7 @@ text-align: center;
 }
 .phisicaldates{
   display: flex;
+  justify-content: center;
   gap:10px;
 }
 .stats {
@@ -123,11 +135,13 @@ text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  height: 90%;
   margin-bottom: 10px;
 }
 .statstitle{
   display: flex;
   justify-content: center;
+  height: 10%;
 }
 .stats-bar {
   width: 100%;
